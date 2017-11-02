@@ -94,7 +94,6 @@ public class ToastUtils {
             @Override
             public void run() {
                 toast.show();
-                Log.i("CW", "context 为空，不显示信息");
             }
         }, 0, 3500);
         new Timer().schedule(new TimerTask() {
