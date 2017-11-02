@@ -20,14 +20,6 @@ public class ToastUtils {
     private static long lastShowTime = -1;
 
 
-    private static Toast getToast(Context context, String pStrMsg, Boolean isLong) {
-        if (null == isLong || isLong) {
-            return Toast.makeText(context, pStrMsg, Toast.LENGTH_LONG);
-        } else {
-            return Toast.makeText(context, pStrMsg, Toast.LENGTH_SHORT);
-        }
-    }
-
     public static void showLongToast(Context context, String pStrMsg) {
         Log.i("CW", "长时间显示信息");
         show(context, pStrMsg, true);
@@ -50,6 +42,14 @@ public class ToastUtils {
         }
         getToast(context, pStrMsg, null);
         showArbitrarilyToast(getToast(context, pStrMsg, null), pISpace);
+    }
+
+    private static Toast getToast(Context context, String pStrMsg, Boolean isLong) {
+        if (null == isLong || isLong) {
+            return Toast.makeText(context, pStrMsg, Toast.LENGTH_LONG);
+        } else {
+            return Toast.makeText(context, pStrMsg, Toast.LENGTH_SHORT);
+        }
     }
 
     private static void show(Context context, String pStrMsg, Boolean isLong) {
